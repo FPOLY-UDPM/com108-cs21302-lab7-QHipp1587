@@ -11,4 +11,32 @@
 
 
 // VIẾT CODE Ở ĐÂY
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main() {
+    char chuoi[100];
+    int nguyenAm = 0, phuAm = 0;
 
+    printf("--- CHUONG TRINH DEM NGUYEN AM & PHU AM ---\n");
+    printf("Nhap vao mot chuoi: ");
+    fgets(chuoi, sizeof(chuoi), stdin);
+    for (int i = 0; i < strlen(chuoi); i++) {
+        char c = tolower(chuoi[i]); 
+
+        if (c >= 'a' && c <= 'z') {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'y' || c == 'u') {
+                nguyenAm++;
+            } else {
+                phuAm++;
+            }
+        }
+    }
+
+    printf("-------------------------------------------\n");
+    printf("Ket qua:\n");
+    printf("- So luong nguyen am: %d\n", nguyenAm);
+    printf("- So luong phu am: %d\n", phuAm);
+
+    return 0;
+}
